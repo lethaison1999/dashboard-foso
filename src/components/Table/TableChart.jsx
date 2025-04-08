@@ -1,6 +1,6 @@
 import React from 'react'
 import SelectInput from '../Select/SelectInput'
-import cartEmpty from '../../assets/images/cart-empty.png'
+import TableChartEmpty from './TableChartEmpty'
 const TableChart = ({ data }) => {
   return (
     <div className="shadow-lg rounded-md p-5 h-full">
@@ -19,14 +19,9 @@ const TableChart = ({ data }) => {
         </thead>
         <tbody>
           {data.length === 0 ? (
-            <tr>
-              <td colSpan={4}>
-                <div className="flex flex-col items-center justify-center py-10 text-gray-500">
-                  <img src={cartEmpty} alt="empty" className="w-[250px] h-[250px] mb-4" />
-                  <p className="font-semibold text-sm text-center text-[20px]">Chưa có dữ liệu</p>
-                </div>
-              </td>
-            </tr>
+            <>
+              <TableChartEmpty />
+            </>
           ) : (
             data.map((item, index) => (
               <tr key={index} className="hover:bg-gray-50">
